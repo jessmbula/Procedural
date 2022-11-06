@@ -1,0 +1,30 @@
+FUNCTION Produit_Scal(V1, V2 : ARRAY_OF INTEGER) : INTEGER
+VAR
+    sum : INTEGER := 0
+    i : INTEGER
+BEGIN
+    IF (V1.length <> V2.length) THEN
+        write ("vector not equal")
+    RETURN sum := NaN
+    END_IF
+
+    FOR i FROM 0 TO V1.length -1  DO
+        sum := sum + V1[i] * V2[i]
+    END_FOR
+    RETURN sum
+END
+
+----------------------------
+
+ALGORITHM principal
+VAR
+    V1, V2 : ARRAY_OF INTEGER[50];
+sum : INTEGER
+
+BEGIN
+// remplir les 2 vecteurs
+sum := Produit_Scal (V1,V2)
+IF (sum = 0) THEN
+    write ("les 2 vecteurs sont orthogonaux")
+END_IF
+END
